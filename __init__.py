@@ -12,8 +12,6 @@ if not os.path.isdir(OUT_DIR):
     os.mkdir(OUT_DIR)
 all_files_dict = {}
 
-print('scan all files...')
-
 for file in glob.glob("*"):
     if not os.path.isfile(file):
         continue
@@ -30,5 +28,5 @@ for file in glob.glob("*"):
 
 for hash in all_files_dict:
     file = all_files_dict[hash]['file']
-    print('copy to out: ', file)
+    print('final file: ', file)
     copyfile(file, OUT_DIR + '/' + file)
